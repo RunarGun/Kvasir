@@ -1,0 +1,76 @@
+.button
+  display: inline-flex
+  align-items: center
+  justify-content: center
+  gap: var(--space-2)
+  border: 1px solid transparent
+  border-radius: var(--radius-md)
+  font-family: var(--font-body)
+  font-weight: 500
+  cursor: pointer
+  transition: background var(--duration-fast) var(--ease-soft), color var(--duration-fast) var(--ease-soft), border-color var(--duration-fast) var(--ease-soft), transform var(--duration-fast) var(--ease-soft)
+
+  &:active
+    transform: translateY(1px)
+
+  &:disabled
+    opacity: 0.5
+    cursor: not-allowed
+
+.sizeSm
+  padding: var(--space-2) var(--space-4)
+  font-size: 0.875rem
+
+.sizeMd
+  padding: var(--space-3) var(--space-5)
+  font-size: 1rem
+
+.sizeLg
+  padding: var(--space-4) var(--space-6)
+  font-size: 1.0625rem
+
+.variantSolid
+  color: var(--color-text)
+  background: var(--btn-bg)
+
+  &:hover
+    background: var(--btn-bg-hover)
+
+.variantOutline
+  background: transparent
+  color: var(--color-text)
+  border-color: rgba(22, 14, 2, 0.16)
+
+  &:hover
+    border-color: var(--btn-bg)
+    background: rgba(22, 14, 2, 0.02)
+
+.variantGhost
+  background: transparent
+  color: var(--color-text)
+
+  &:hover
+    background: rgba(22, 14, 2, 0.04)
+
+.colorBeige
+  --btn-bg: var(--color-accent-beige)
+  --btn-bg-hover: #efd6b3
+
+.colorBlue
+  --btn-bg: var(--color-accent-blue)
+  --btn-bg-hover: #a8cfd8
+
+.colorGreen
+  --btn-bg: var(--color-accent-green)
+  --btn-bg-hover: #b6dc8e
+
+.colorOrange
+  --btn-bg: var(--color-accent-orange)
+  --btn-bg-hover: #f5b65d
+
+.colorRed
+  --btn-bg: var(--color-accent-red)
+  --btn-bg-hover: #a23838
+
+  &.variantSolid
+    color: #fff

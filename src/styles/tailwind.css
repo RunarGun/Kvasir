@@ -1,0 +1,17 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #f6f1ee;
+  --color-surface: #f9f7f6;
+  --color-text: #160e02;
+  --color-accent-beige: #f5e3cc;
+  --color-accent-blue: #bfdde3;
+  --color-accent-green: #cae7a6;
+  --color-accent-orange: #ffc675;
+  --color-accent-red: #b84040;
+
+  --radius-md: 10px;
+  --radius-lg: 16px;
+
+  --ease-soft: cubic-bezier(0.22, 1, 0.36, 1);
+}
