@@ -3,8 +3,7 @@ import "@/styles/globals.sass"
 
 import type { Metadata } from "next"
 
-import { inter, motorik } from "@/lib/fonts"
-import { cn } from "@/utils/cn"
+import { inter } from "@/lib/fonts"
 
 import { Providers } from "./providers"
 
@@ -15,7 +14,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="nb" className={cn(inter.variable, motorik.variable)}>
+    <html lang="nb" className={inter.variable}>
       <body>
         <Providers>{children}</Providers>
       </body>
