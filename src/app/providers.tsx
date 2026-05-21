@@ -1,12 +1,18 @@
 "use client"
 
 import { ClerkProvider } from "@clerk/nextjs"
-import { useRef } from "react"
+import { type ReactNode, useRef } from "react"
 import { Provider as ReduxProvider } from "react-redux"
 import { SWRConfig } from "swr"
 
 import { fetcher } from "@/lib/fetcher"
 import { type AppStore, makeStore } from "@/store"
+
+function MaybeClerkProvider({ children }: { children: ReactNode }) {
+  const key = process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY
+  if (!key) return <>{children}</>
+  return <ClerkProvider>{children}</ClerkProvider>
+}
 
 export function Providers({ children }: { children: React.ReactNode }) {
   const storeRef = useRef<AppStore | null>(null)
@@ -15,7 +21,7 @@ export function Providers({ children }: { children: React.ReactNode }) {
   }
 
   return (
-    <ClerkProvider>
+    <MaybeClerkProvider>
       <ReduxProvider store={storeRef.current}>
         <SWRConfig
           value={{
@@ -27,6 +33,6 @@ export function Providers({ children }: { children: React.ReactNode }) {
           {children}
         </SWRConfig>
       </ReduxProvider>
-    </ClerkProvider>
+    </MaybeClerkProvider>
   )
 }
