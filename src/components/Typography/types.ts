@@ -1,6 +1,6 @@
 import type { AccentColor } from "@/types"
 
-export type TextColor = "default" | "muted" | "subtle" | AccentColor
+export type TextColor = "default" | "muted" | "subtle" | "inverse" | "inverseMuted" | AccentColor
 
 export type HeadingVariant = "default" | "display"
 

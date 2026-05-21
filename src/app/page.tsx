@@ -1,45 +1,121 @@
-import { Button } from "@/components/Button/Button"
-import { H1 } from "@/components/Typography/H1/H1"
-import { H3 } from "@/components/Typography/H3/H3"
-import { Label } from "@/components/Typography/Label/Label"
-import { P1 } from "@/components/Typography/P1/P1"
-import { P2 } from "@/components/Typography/P2/P2"
+import { Asterisk } from "@/components/Asterisk/Asterisk"
+import { Brand } from "@/components/Brand/Brand"
+import { MatrixRow } from "@/components/MatrixRow/MatrixRow"
+import { P3 } from "@/components/Typography/P3/P3"
 
 import styles from "./page.module.sass"
 
 export default function HomePage() {
   return (
     <main className={styles.main}>
-      <section className={styles.hero}>
-        <Label color="orange">Kvasir</Label>
-        <H1>Rolig, varm minimalisme.</H1>
-        <P1 color="muted">
-          Et utgangspunkt bygget med Next.js, React, Clerk, Redux Toolkit og SWR — pakket inn i en
-          dempet palett av beige, lyseblå og grønn.
-        </P1>
+      <header className={styles.header}>
+        <Brand name="Taki" tagline="thinking engine" />
+      </header>
 
-        <div className={styles.actions}>
-          <Button variant="solid" color="orange">
-            Kom i gang
-          </Button>
-          <Button variant="outline">Les mer</Button>
+      <section className={styles.matrix}>
+        <MatrixRow
+          category="Outcomes"
+          categoryDescription="What your business gets"
+          categoryColor="beige"
+          cells={[
+            {
+              title: "Smarter employees",
+              description: "Taki alongside every person.",
+              pills: [
+                { label: "Chat", variant: "solid", color: "red" },
+                { label: "Code", variant: "solid", color: "red" },
+                { label: "Cowork", variant: "solid", color: "red" },
+              ],
+            },
+            {
+              title: "Faster processes",
+              description: "Agents that run core workflows end-to-end.",
+              pills: [
+                { label: "Contract review" },
+                { label: "Underwriting" },
+                { label: "Fund reconciliation" },
+              ],
+            },
+            {
+              title: "Transformative products",
+              description: "Taki-powered experiences for your customers.",
+            },
+          ]}
+        />
+
+        <MatrixRow
+          category="Platform"
+          categoryDescription="How you build & run it"
+          categoryColor="green"
+          cells={[
+            {
+              title: "Primitives",
+              description: "Building blocks for full customization.",
+              pills: [
+                { label: "API" },
+                { label: "Tools" },
+                { label: "Skills" },
+                { label: "Connectors" },
+                { label: "Subagents" },
+              ],
+            },
+            {
+              title: "Managed agents",
+              description: "Infrastructure for production agents.",
+              pills: [
+                { label: "Sandboxing" },
+                { label: "Harness" },
+                { label: "Orchestration" },
+              ],
+            },
+            {
+              title: "Operating system",
+              description: "Deploy, govern, and monitor at scale.",
+              pills: [
+                { label: "Auth" },
+                { label: "Controls" },
+                { label: "Audit" },
+              ],
+            },
+          ]}
+        />
+
+        <MatrixRow
+          category="Models"
+          categoryDescription="The intelligence underneath"
+          categoryColor="red"
+          cells={[
+            {
+              icon: <Asterisk size={18} />,
+              title: "Taki Prime",
+              description: "Industry-leading intelligence",
+            },
+            {
+              icon: <Asterisk size={18} />,
+              title: "Taki Flow",
+              description: "General-purpose intelligence",
+            },
+            {
+              icon: <Asterisk size={18} />,
+              title: "Taki Spark",
+              description: "Cost-effective intelligence",
+            },
+          ]}
+        />
+      </section>
+
+      <footer className={styles.footer}>
+        <div className={styles.providers}>
+          <P3 color="muted">Available on</P3>
+          <span className={styles.divider} aria-hidden="true" />
+          <span className={styles.provider}>
+            <Asterisk size={14} />
+            First-party
+          </span>
+          <span className={styles.provider}>Cloud</span>
+          <span className={styles.provider}>Edge</span>
         </div>
-      </section>
-
-      <section className={styles.cards}>
-        <article className={styles.card}>
-          <H3>Auth</H3>
-          <P2 color="muted">Clerk håndterer pålogging og økter ut av boksen.</P2>
-        </article>
-        <article className={styles.card}>
-          <H3>State</H3>
-          <P2 color="muted">Redux Toolkit for global tilstand, SWR for serverdata.</P2>
-        </article>
-        <article className={styles.card}>
-          <H3>Styling</H3>
-          <P2 color="muted">CSS Modules med Sass, design tokens og Tailwind utilities.</P2>
-        </article>
-      </section>
+      </footer>
     </main>
   )
 }

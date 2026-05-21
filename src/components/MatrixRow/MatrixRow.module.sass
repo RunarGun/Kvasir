@@ -1,0 +1,71 @@
+.row
+  display: grid
+  grid-template-columns: 260px 1fr
+  gap: var(--space-3)
+  background: var(--color-surface)
+  border-radius: var(--radius-md)
+  padding: var(--space-3)
+  box-shadow: var(--shadow-sm)
+  animation: fade-in var(--duration-slow) var(--ease-soft) both
+
+.category
+  border-radius: var(--radius-md)
+  padding: var(--space-5)
+  display: flex
+  flex-direction: column
+  gap: var(--space-2)
+  justify-content: flex-start
+
+.catBeige
+  background: var(--color-accent-beige)
+
+.catBlue
+  background: var(--color-accent-blue)
+
+.catGreen
+  background: var(--color-accent-green)
+
+.catOrange
+  background: var(--color-accent-orange)
+
+.catRed
+  background: var(--color-accent-red)
+
+.cells
+  display: grid
+  grid-template-columns: repeat(3, 1fr)
+
+.cell
+  padding: var(--space-5) var(--space-5)
+  display: flex
+  flex-direction: column
+  gap: var(--space-3)
+  border-left: 1px solid rgba(22, 14, 2, 0.06)
+
+  &:first-child
+    border-left: none
+
+.cellHeader
+  display: flex
+  align-items: center
+  gap: var(--space-3)
+
+.pills
+  display: flex
+  flex-wrap: wrap
+  gap: var(--space-2)
+  margin-top: var(--space-2)
+
+@media (max-width: 900px)
+  .row
+    grid-template-columns: 1fr
+
+  .cells
+    grid-template-columns: 1fr
+
+  .cell
+    border-left: none
+    border-top: 1px solid rgba(22, 14, 2, 0.06)
+
+    &:first-child
+      border-top: none

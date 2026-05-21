@@ -4,6 +4,8 @@ export const colorVar: Record<TextColor, string> = {
   default: "var(--color-text)",
   muted: "var(--color-text-muted)",
   subtle: "var(--color-text-subtle)",
+  inverse: "#ffffff",
+  inverseMuted: "rgba(255, 255, 255, 0.78)",
   beige: "var(--color-accent-beige)",
   blue: "var(--color-accent-blue)",
   green: "var(--color-accent-green)",
